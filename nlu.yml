@@ -1,0 +1,265 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - Hello
+      - Hi there
+      - Hey
+      - Greetings
+      - Howdy
+      - How are you?
+      - Good day
+      - Hi, how's it going?
+      - Hey, what's up?
+      - Hiya
+      - Hi, what's new?
+      - Hey there, how's everything?
+      - Yo
+      - Hi, nice to meet you
+      - Hi, it's great to be here
+      - Hello, how can I help you?
+      - Hi, what can I do for you?
+      - Hey, how's your day?
+      - Hello, any specials today?
+      - Hi, I'm excited to order
+      - Greetings, ready to take my order?
+
+  - intent: request_menu
+    examples: |
+      - Yes, please show me the menu.
+      - I'd like to see the menu.
+      - Show me the menu categories.
+      - What's on the menu?
+      - Can I see the food menu?
+      - What are my options on the menu?
+      - Could you share the menu with me?
+      - Is there a menu available?
+      - Can you give me information about the menu?
+      - I'm curious about the menu offerings.
+      - What dishes do you serve?
+      - Tell me about the items on the menu.
+      - What kind of food is on the menu?
+      - Do you have a list of menu items?
+      - What can I order from the menu?
+      - Can you provide details about the menu?
+      - Is there a menu card I can look at?
+      - I'm interested in knowing the menu options.
+      - Can you show me what's available to order?
+      - Could you show me the menu choices?
+
+  - intent: choose_category
+    examples: |
+      - Show me the options for [Beverages](category)
+      - What are the [Sandwiches](category) available?
+      - Can you list the [Desserts](category) on the menu?
+      - I'd like to see the [Appetizers](category)
+      - What kind of [Main courses](category) do you have?
+      - Tell me about the [Pastries](category) you offer
+      - Are there any [Salads](category) on the menu?
+      - What are the [Smoothies](category) you serve?
+      - Show me the [Specialty Drinks](category) you have
+      - Could you describe the [Side Dishes](category) available?
+      - What [Cold Drinks](category) are on the menu?
+      - Let me know about the [Hot Drinks](category) you offer
+      - Tell me about the [Alcoholic Beverages](category) you have
+      - What [Non-Alcoholic Drinks](category) do you serve?
+      - Can you list the [Breakfast items](category) on the menu?
+      - Show me the [Lunch options](category) available
+      - What are the [Dinner choices](category) for today?
+
+  - intent: order_items
+    examples: |
+      - I'd like a [Latte](menu_item) x 2, a [Croissant](menu_item) x 1, and a [Chocolate Brownie](menu_item) x 2.
+      - Can I have an [Iced Coffee](menu_item) x 1, a [Caesar Salad](menu_item) x 1, and a [Tiramisu](menu_item) x 1 please?
+      - Get me a [Green Tea](menu_item) x 2 and a [Cinnamon Roll](menu_item) x 1.
+      - I'll have 2 [Lattes](menu_item), 1 [Croissant](menu_item), and 2 [Chocolate Brownies](menu_item).
+      - Can I get a [Iced Coffee](menu_item) and a [Caesar Salad](menu_item)?
+      - Give me a [Club Sandwich](menu_item) x 1, a [Berry Blast](menu_item) x 2, and a [Cheesecake](menu_item) x 1.
+      - Could I have a [Chai Latte](menu_item) x 1, a [Muffin](menu_item) x 1, and a [Fruit Tart](menu_item) x 2?
+      - Get me a [Tea](menu_item) x 2, a [Greek Salad](menu_item) x 1, and a [Chocolate Brownie](menu_item) x 1.
+      - I'll take 1 [Iced Latte](menu_item), 1 [Veggie Wrap](menu_item), and 1 [Mango Tango](menu_item).
+      - Please give me a [Coffee](menu_item) x 2, a [Danish](menu_item) x 1, and a [Fruit Tart](menu_item) x 1.
+      - Can I have a [Soft Drink](menu_item) x 1, a [Turkey Panini](menu_item) x 1, and a [Cheesecake](menu_item) x 2?
+      - Get me a [Smoothie](menu_item) x 2, a [Croissant](menu_item) x 1, and a [Chocolate Brownie](menu_item) x 1.
+      - I'd like 1 [Matcha Latte](menu_item), 1 [Caesar Salad](menu_item), and 1 [Chocolate Brownie](menu_item).
+      - Can I get a [Tea](menu_item) x 1, a [Veggie Wrap](menu_item) x 1, and a [Berry Blast](menu_item) x 2?
+      - Give me an [Iced Coffee](menu_item) x 1, a [Cobb Salad](menu_item) x 1, and a [Cheesecake](menu_item) x 1.
+      - Could I have a [Chai Latte](menu_item) x 1, a [Muffin](menu_item) x 1, and a [Fruit Tart](menu_item) x 2?
+      - Get me a [Coffee](menu_item) x 2, a [Veggie Wrap](menu_item) x 1, and a [Chocolate Brownie](menu_item) x 1.
+      - I'll take 1 [Smoothie](menu_item), 1 [Turkey Panini](menu_item), and 1 [Mango Tango](menu_item).
+      - Please give me a [Soft Drink](menu_item) x 1, a [Danish](menu_item) x 1, and a [Tiramisu](menu_item) x 2.
+      - Can I have a [Latte](menu_item) x 1, a [Cobb Salad](menu_item) x 1, and a [Chocolate Brownie](menu_item) x 2?
+      - Get me a [Tea](menu_item) x 2, a [Croissant](menu_item) x 1, and a [Cheesecake](menu_item) x 1.
+      - I'd like 2 [Chai Lattes](menu_item), 1 [Greek Salad](menu_item), and 2 [Chocolate Brownies](menu_item).
+      - I'll have 3 [Iced Coffees](menu_item), 2 [Veggie Wraps](menu_item), and 3 [Chocolate Brownies](menu_item).
+      - Please get me 2 [Smoothies](menu_item), 2 [Croissants](menu_item), and 2 [Cheesecakes](menu_item).
+      - Could I have 2 [Matcha Lattes](menu_item), 1 [Caesar Salad](menu_item), and 2 [Chocolate Brownies](menu_item)?
+      - Get me 3 [Teas](menu_item), 1 [Turkey Panini](menu_item), and 3 [Fruit Tarts](menu_item), please.
+      - I'd like 2 [Iced Lattes](menu_item), 1 [Muffin](menu_item), and 2 [Mango Tangos](menu_item).
+      - Can I get 4 [Coffees](menu_item), 1 [Danish](menu_item), and 4 [Chocolate Brownies](menu_item)?
+      - Give me 2 [Soft Drinks](menu_item), 2 [Club Sandwiches](menu_item), and 2 [Berry Blasts](menu_item).
+      - I'll take 1 [Smoothie](menu_item), 1 [Greek Salad](menu_item), and 1 [Tiramisu](menu_item).
+
+
+  - intent: affirm
+    examples: |
+      - Yes
+      - Yeah
+      - Sure
+      - Of course
+      - Definitely
+      - Absolutely
+      - Yup
+      - Indeed
+      - You bet
+      - Right on
+      - Totally
+      - For sure
+      - Without a doubt
+      - That's correct
+      - I agree
+      - Affirmative
+      - You got it
+      - That's right
+      - I'm on board
+      - Most certainly
+
+  - intent: deny
+    examples: |
+      - No
+      - Nope
+      - Not right now
+      - I'm not interested
+      - I'll pass
+      - I'll think about it
+  - intent: choose_dine_in
+    examples: |
+      - Dine-in
+      - I'll dine in
+      - For here
+      - I'd like to eat in
+      - I'll be eating here
+      - I want to have my meal here
+      - I'll stay and eat
+      - This will be an eat-in order
+      - I prefer to dine in
+      - Please set up a table for me
+      - I'm planning to enjoy my meal at the restaurant
+      - I'll be enjoying my food here
+      - Can I get a table for dining in?
+      - I'd like to sit down and eat
+      - Eating at the restaurant sounds good
+      - I'll be having my meal on-site
+      - I'm here to eat in the restaurant
+      - I choose to dine in
+      - Can you seat me for dining in?
+
+  - intent: choose_takeaway
+    examples: |
+      - Takeaway
+      - To go
+      - I'll take it to go
+      - I'd like to take it away
+      - I'll be taking it to go
+      - Can you make it for takeaway?
+      - I'll grab my order to go
+      - I want my food for takeout
+      - Give me my meal in a to-go bag
+      - I'm in a hurry, so I'll take it to go
+      - Please pack my order for takeaway
+      - I'll be picking up my order to go
+      - Can I get my food packed to go?
+      - I prefer to have my order as takeaway
+      - I'm not eating here, so it's to go
+      - I'll be carrying my order out
+      - Please prepare my order for takeout
+      - I'll be leaving with my food
+      - Can you make it for me to take away?
+      - I'd like my order in a takeaway container
+
+  - intent: faq_opening_hours
+    examples: |
+      - What are your opening hours?
+      - When do you open and close?
+      - What time are you open until?
+      - Could you tell me your operating hours?
+      - What's your schedule for the day?
+      - When can I visit your cafe?
+      - What are the hours of operation?
+      - What time do you start serving customers?
+      - What time does the cafe close today?
+      - What time do you close on weekends?
+      - Can you let me know your working hours?
+      - When do you start and end the day?
+
+  - intent: faq_reservation
+    examples: |
+      - How can I make a reservation?
+      - Can I reserve a table?
+      - What's the process for booking a table?
+      - Is it possible to reserve seats in advance?
+      - Do you accept table reservations?
+      - How do I go about reserving a table?
+      - Can I book a table for a specific time?
+      - What's the reservation procedure?
+      - Are there any requirements for making a reservation?
+      - Can I guarantee a table for a group?
+      - What's the policy for reserving a spot?
+      - Do I need to call ahead for a reservation?
+      - Can I book a table online?
+      - Is there a limit to how many people I can reserve for?
+      - What's the best way to secure a table?
+      - Can I make a reservation for tomorrow?
+      - How much in advance should I make a reservation?
+      - Is there a reservation fee?
+      - Can I reserve a table for a special occasion?
+      - Can you hold a table for me?
+
+
+  - intent: faq_payment_methods
+    examples: |
+      - What payment methods do you accept?
+      - Can I pay with credit card?
+      - Do you accept Apple Pay?
+      - What are the available payment options?
+      - Can I use my debit card to pay?
+      - Are mobile payments like Google Pay accepted?
+      - Do you take contactless payments?
+      - Can I pay in cash?
+      - What forms of payment are allowed?
+      - Is it possible to use digital wallets for payment?
+      - Can I pay using PayPal?
+      - What credit cards do you support for payment?
+      - Do you take prepaid cards for payment?
+      - Are there any restrictions on payment methods?
+      - Can I split the bill between multiple payment methods?
+      - Do you accept mobile wallets like Samsung Pay?
+      - Is there a minimum spend for credit card payments?
+      - Can I pay with a combination of cash and card?
+      - Are international credit cards accepted?
+      - Can I pay with foreign currency?
+
+
+  - intent: faq_allergens
+    examples: |
+      - Do you provide allergen information for each menu item?
+      - How can I find out if a dish contains allergens?
+      - Are there any gluten-free options on the menu?
+      - Can you accommodate customers with allergies?
+      - Is there a list of common allergens in your food?
+      - What steps do you take to prevent cross-contamination?
+      - Are nut-free options available?
+      - Do you label vegan and vegetarian options?
+      - Can you accommodate people with dairy allergies?
+      - How can I be sure a dish is safe for my allergies?
+      - Are there any soy-free dishes on the menu?
+      - Are there gluten-free bread options for sandwiches?
+      - Is allergen information provided on the menu itself?
+      - Can I get information on dairy-free choices?
+      - Do you have a separate kitchen for allergy-sensitive food prep?
+      - Can I speak with someone about my specific dietary needs?
+      - How do you handle shellfish allergies?
+      - Is there a comprehensive list of allergen-containing ingredients?
+      - Are gluten-free desserts available?
+      - Can I get allergen information for the desserts?

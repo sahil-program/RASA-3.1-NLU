@@ -1,0 +1,33 @@
+version: '3.1'
+rules:
+  - rule: Greet the user and ask about the menu
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: User requests the menu and is presented with categories
+    steps:
+      - intent: request_menu
+      - action: utter_show_menu
+
+  - rule: User chooses a category and is provided with options
+    steps:
+      - intent: choose_category
+      - action: action_category_options
+
+  - rule: User ends ordering and is asked for dine-in or takeaway
+    steps:
+      - intent: deny
+      - action: utter_ask_dine_or_takeaway
+
+  - rule: User chooses dine-in
+    steps:
+      - intent: choose_dine_in
+      - action: utter_dine_in
+
+  - rule: User chooses takeaway
+    steps:
+      - intent: choose_takeaway
+      - action: utter_takeaway
+      
+ 

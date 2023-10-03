@@ -1,0 +1,68 @@
+version: '3.1'
+
+intents:
+  - greet
+  - request_menu
+  - choose_category
+  - order_items
+  - affirm
+  - deny
+  - choose_dine_in
+  - choose_takeaway
+  - faq_opening_hours
+  - faq_reservation
+  - faq_payment_methods
+  - faq_allergens
+
+entities:
+  - category
+  - menu_item
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to Cafe Sky! Would you like to see our menu?"
+
+  utter_show_menu:
+    - text: "Sure thing! Here are our menu categories: Beverages, Pastries, Sandwiches, Salads, Desserts, Smoothies, Specialty Drinks. Please choose a category you're interested in."
+
+  utter_category_options:
+    - text: "Great choice! Here are the options under [Category Name]: [List of Options]. Please let me know your selection and the quantity."
+
+  utter_save_order:
+    - text: "Got it! Your order so far: [Ordered Items]. Would you like to add more items to your order?"
+
+  utter_ask_dine_or_takeaway:
+    - text: "Thank you for your order! Is this for dine-in or takeaway?"
+
+  utter_dine_in:
+    - text: "Fantastic! Please have a seat, and our staff will assist you shortly."
+
+  utter_takeaway:
+    - text: "Sure thing! Your takeaway order will be ready soon. Please wait at our waiting station."
+
+  utter_goodbye:
+    - text: "Thank you for visiting us! Have a great day!"
+
+  utter_faq_opening_hours:
+    - text: "Our opening hours are from 8 AM to 10 PM, Monday to Saturday. We're closed on Sundays."
+
+  utter_faq_reservation:
+    - text: "Certainly! You can make a reservation by emailing us at cafesky@gmail.com."
+
+  utter_faq_payment_methods:
+    - text: "We accept cash, credit cards, and mobile payment methods like Apple Pay and Google Pay. Payment can be made at the cashier section in the cafe."
+
+  utter_faq_allergens:
+    - text: "We take allergies seriously. Our menu items are labeled with allergen information. Please let us know about your allergies, and our staff will assist you."
+
+actions:
+  - action_greet
+  - action_show_menu
+  - action_category_options
+  - action_save_order
+  - action_dine_in
+  - action_takeaway
+  - action_faq_opening_hours
+  - action_faq_reservation
+  - action_faq_payment_methods
+  - action_faq_allergens

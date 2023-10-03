@@ -1,0 +1,88 @@
+version: "3.1"
+
+stories:
+  - story: User starts with a greeting and is asked about the menu
+    steps:
+      - user: |
+          Hi
+        intent: greet
+      - action: utter_greet
+
+  - story: User requests the menu and is presented with menu categories
+    steps:
+      - user: |
+          Show me the menu
+        intent: request_menu
+      - action: utter_show_menu
+
+  - story: User chooses a category and is provided with options
+    steps:
+      - user: |
+          I'd like to see the Sandwiches
+        intent: choose_category
+        entities:
+          - category: "Sandwiches"
+      - action: action_category_options
+
+  - story: User orders items and is asked for more items
+    steps:
+      - user: |
+          I want a [Club Sandwich](menu_item) x 1
+        intent: order_items
+        entities:
+          - category: "Sandwiches"
+          - menu_item: "Club Sandwich"
+          - quantity: 1
+      - action: action_save_order
+      - user: |
+          Yes, add a [Veggie Wrap](menu_item) as well
+        intent: affirm
+      - action: utter_save_order
+
+  - story: User chooses to add more items after ordering
+    steps:
+      - user: |
+          Sure, show me the menu again
+        intent: affirm
+      - action: utter_show_menu
+
+  - story: User ends ordering and is asked for dine-in or takeaway
+    steps:
+      - user: |
+          No, that's all for now
+        intent: deny
+      - action: utter_ask_dine_or_takeaway
+
+  - story: User chooses dine-in
+    steps:
+      - user: |
+          I'll dine in
+        intent: choose_dine_in
+      - action: utter_dine_in
+
+  - story: User chooses takeaway
+    steps:
+      - user: |
+          I'll take it away
+        intent: choose_takeaway
+      - action: utter_takeaway
+      
+  - story: User asks about opening hours
+    steps:
+      - intent: faq_opening_hours
+      - action: action_faq_opening_hours
+
+  - story: User inquires about reservations
+    steps:
+      - intent: faq_reservation
+      - action: action_faq_reservation
+
+  - story: User asks about payment methods
+    steps:
+      - intent: faq_payment_methods
+      - action: action_faq_payment_methods
+
+  - story: User questions allergen information
+    steps:
+      - intent: faq_allergens
+      - action: action_faq_allergens
